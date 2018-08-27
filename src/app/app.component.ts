@@ -24,8 +24,8 @@ export class AppComponent implements OnInit {
 
   get() {
     this.http.get(`http://localhost:3000/queries`).subscribe(
-      data => {
-        console.log(data);
+      (data: Query[]) => {
+        this.queries = data;
       },
       (err: HttpErrorResponse) => {
         // エラー処理
